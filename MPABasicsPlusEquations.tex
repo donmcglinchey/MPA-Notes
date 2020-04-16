@@ -6,6 +6,7 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows, arrows.meta}
 \usetikzlibrary{positioning}
+\usetikzlibrary{patterns}
 \usepackage{verbatim}
 \usepackage{amsmath}
 
@@ -1161,40 +1162,664 @@ Angular displacement with constant acceleration
 
 \bigskip
 
+Just as there is analogous kinematic relations between translational and rotational there is also analogous kinetic relationships. \\
+The first term we will look at is the \emph{rotational} inertia or \emph{moment of inertia} which is analogous to \emph{mass}.  If we have the simple case of an object we can treat as a point mass $m$ rotating at a distance $r$ from a fixed axis, we can calculate its moment of inertia $I$ as:
+
+$$I = mr^2$$
+
+If we are dealing with a real object then we can define the moment of inertia  $I$  of an object to be the sum of  $mr^2$  for all the point masses of which it is composed. That is,
 
 
-Moment of Inertia
-$$ I = \sum_j m_j r_j^2 $$
+
+\bigskip
 
 
-Rotational Kinetic Energy
-$$ K = \frac{1}{2} I \omega^2 $$
+Moment of Inertia:
+\begin{equation}
+I = \sum_j m_j r_j^2
+\end{equation}
 
+\bigskip
 
-Torque Vector
-$$ \overrightarrow{\tau} = \overrightarrow{r} \times \overrightarrow{F}$$
+It is not easy to derive this for every shape of object in general so we will restrict our interest to four common situations:
+\begin{enumerate}
+	\item A thin hoop of radius $R$ and mass $M$ rotating about its central axis $$I = MR^2$$
+	\item A thick hoop of inner radius $R_i$ and outer radius $R_o$ and mass $M$ rotating about its central axis $$I = \frac{M}{2}(R_i^2 + R_o^2 )$$
+	\item A solid cylinder or disk of radius $R$ and mass $M$ rotating about its central axis $$I = \frac{MR^2}{2}$$
+	\item The rotation of a sphere of radius $R$ and mass $M$ about any axis $$ I = \frac{2MR^2}{5}$$
+\end{enumerate}
+	 
 
+\bigskip
 
+The next consideration is the moment of a force or the \textbf{torque}.  If a force $F$ is applied perpendicularly (at right angles, $90\deg$) at a distance from the axis of $r$ then the torque $\tau$ can be calculated from:
+
+$$\tau = Fr$$
+
+or at any angle, the \emph{torque} in vector form:
+
+\begin{equation}
+\overrightarrow{\tau} = \overrightarrow{r} \times \overrightarrow{F}
+\end{equation}
+
+\bigskip
+
+We can also write an expression of Newton's second law [$F=ma$ in a translational context] for a rotational case:
 
 Newton's 2nd Law of Rotation
-$$ \sum_i \tau_i = I \alpha $$
+\begin{equation}
+\sum_i \tau_i = I \alpha
+\end{equation}
+
+\bigskip
+
+and define \emph{Rotational Kinetic Energy} by the expression:
+
+\begin{equation}
+KE_{rot} = \frac{1}{2} I \omega^2
+\end{equation}
 
 
 
-Rotational Power
-$$ P = \tau \omega $$
+and \emph{Rotational Power}
+
+\begin{equation}
+P_{rot} = \tau \omega
+\end{equation}
 
 
+\bigskip
+
+As an analog to the definition of linear momentum $p=mv$ we can define define \emph{\textbf{angular momentum}}  $L$  as:
+
+\begin{equation}
+L = I \omega
+\end{equation}
+
+
+And analogous to linear momentum, it is conserved when the net external torque is zero.  The relationship between torque and angular momentum is:
+
+\begin{equation}
+\tau_{net} = \frac{\Delta L}{\Delta t}
+\end{equation}
+
+Expressing the conservation of angular momentum  in terms of the moment of inertia, we can write:
+
+\begin{equation}
+L = L'
+\end{equation}
+
+ or 
+ 
+\begin{equation}
+I \omega = I' \omega'
+\end{equation}
+ 
+ 
+\newpage
+
+\section{STATIC EQUILIBRIUM AND ELASTICITY}
+
+\bigskip
+
+In mechanics the term "Statics" refers to the study of forces in equilibrium, so that the sum of all the forces and torques would be zero.  So then we can describe two conditions which must be met for equilibrium.
+
+\begin{enumerate}
+	\item First Equilibrium Condition: The first equilibrium condition for the static equilibrium of a rigid body expresses translational equilibrium:
+	
+	$$ \sum_k \overrightarrow{F}_k = \overrightarrow{0} $$
+	\item Second Equilibrium Condition: The second equilibrium condition for the static equilibrium of a rigid body expresses rotational equilibrium:
+	
+	$$ \sum_k \overrightarrow{\tau}_k = \overrightarrow{0} $$
+\end{enumerate}
+
+
+\bigskip
+
+There are important concepts in mechanics which can be used in equilibrium conditions such as stress, strain, elastic modulus, etc. \\
+
+The first situation we will consider is compressive stress and strain.  
+
+\bigskip
+
+
+\begin{center}
+\begin{tikzpicture}
+
+	\draw [black!50, fill=black!10] (0,3.5) ellipse (1.2 and 0.5);
+	\draw [black!50, fill=black!5] (0,4) ellipse (1.2 and 0.5);
+	\draw [black!50, fill=black!10] (0,0) ellipse (1.2 and 0.5);
+	\draw [blue!10, pattern=north west lines, pattern color=blue!10] (0,1.5) ellipse (1.2 and 0.5);
+	
+	\draw [black!50]   (-1.2, 4) -- (-1.2, 0);
+	\draw [black!50]   (1.2, 4) -- (1.2, 0);
+	
+	\draw [<->, black!50]   (1.5, 4) -- (1.5, 0);
+	\draw [<->, black!50]   (-1.5, 4) -- (-1.5, 3.5);
+	
+	\draw [->, very thick, red]  (0, 5) -- (0, 4);
+	\draw [->, very thick, red]  (0, -1.5) -- (0, -0.5);
+	
+	\node [right] at (1.5, 2.0) {$L_o$};
+	\node [left] at (-1.5, 3.75) {$\Delta L$};
+	\node [right, red] at (0.0, 4.75) {$F$};
+	\node [right, red] at (0.0, -1.0) {$F$};
+	\node [blue] at (0.0, 1.5) {$A$};
+
+
+	\node[below] at (0,-2.0) {\textbf{\texttt{Compressive Stress and Strain}}};
+\end{tikzpicture} 
+\end{center}
+
+
+\bigskip
+
+If we consider a cylinder of cross-section $A$ and original length $L_o$ is compressed by some force $F_\bot$ then the \emph{stress} $\sigma$ that the cylinder experiences is:
+
+\begin{equation}
+\sigma = \frac{F}{A}
+\end{equation}
+\\
+and if the force changes the length of the cylinder by an amount $\Delta L$, sometimes called a deformation of $\Delta L$, then the compressive \emph{strain} $\epsilon$ is given by:
+
+\begin{equation}
+\epsilon = \frac{\Delta L}{L_o}
+\end{equation}
+
+
+\bigskip
+
+As long as we stay in the elastic region, usually with small values of deformation or strain, then we can relate the stress and strain by the elastic modulus of the material, this is often known as the Young's modulus, where there is a Linear relation between stress and strain $ stress = (elastic \ modulus) \times strain $ and Young's modulus $E$:
+
+\begin{equation}
+E = \frac{compressive \ stress}{compressive \ strain} = \frac{F_\bot}{A} \frac{L_0}{\Delta L}
+\end{equation}
+\\
+If the forces were to pull rather than push on the faces of the cylinder putting it into \emph{tension} and this time the cylinder extended by an amount $\Delta L$ then 
+
+\begin{equation}
+Y = \frac{tensile \ stress}{tensile \ strain} = \frac{F_\bot}{A} \frac{L_0}{\Delta L}
+\end{equation}
+
+\bigskip
+
+When we compress the cylinder it not only changes length, it gets shorter [a longitudinal change] it gets 'squashed' and so also changes radius, it gets wider [a lateral change].  We can define a lateral strain $\epsilon_{Lat}$ as:
+
+\begin{equation}
+\epsilon_{Lat} = \frac {\Delta R}{R}
+\end{equation}
+
+
+
+The relationship between laterial strain and and longitudinal strain is given by   \textbf{Poisson's Ratio} $\nu$,
+
+\begin{equation}
+\nu = \frac{\epsilon_{Lat}}{\epsilon}
+\end{equation}
+
+\bigskip
+
+
+\begin{center}
+	\begin{tikzpicture}
+	%Poisson's Ratio
+	\draw [black!50, fill=black!10] (0,4) ellipse (1.2 and 0.5);
+	\draw [black!50, fill=black!10] (0,0) ellipse (1.2 and 0.5);
+	\draw [black!50, fill=black!30] (0,3.5) ellipse (1.4 and 0.7);
+	\draw [black!50, fill=black!30] (0,0.5) ellipse (1.4 and 0.7);
+
+	%\draw [blue!10, pattern=north west lines, pattern color=blue!10] (0,1.5) ellipse (1.2 and 0.5);
+	
+	\draw [black!50, fill = black!30] (6,2) circle (1.4);
+	\draw [black!50, fill = black!10] (6,2) circle (1.2);
+	
+	\draw [black!50]   (-1.2, 4) -- (-1.2, 0);
+	\draw [black!50]   (1.2, 4) -- (1.2, 0);
+	\draw [black!50]   (-1.4, 3.5) -- (-1.4, 0.5);
+	\draw [black!50]   (1.4, 3.5) -- (1.4, 0.5);
+	
+	\draw [<->, black!50]   (1.6, 4) -- (1.6, 0);
+	\draw [<->, black!50]   (-1.5, 4) -- (-1.5, 3.5);
+	\draw [->, black!50]  (6,2) -- (7.2,2);
+	\draw [->, black!50]  (8,2) -- (7.4,2);
+	
+	\draw [->, very thick, red]  (0, 5) -- (0, 4);
+	\draw [->, very thick, red]  (0, -1.5) -- (0, -0.5);
+	
+	
+	\node [right] at (1.6, 2.0) {$L_o$};
+	\node [left] at (-1.5, 3.75) {$\Delta L$};
+	\node [right, red] at (0.0, 4.75) {$F$};
+	\node [right, red] at (0.0, -1.0) {$F$};
+	\node [above] at (6.5, 2) {$R_o$};
+	\node [above] at (7.8, 2) {$\Delta R$};
+	%\node [blue] at (0.0, 1.5) {$A$};
+	
+	
+	\node[below] at (3,-2.0) {\textbf{\texttt{Poisson's Ratio}}};
+	\end{tikzpicture} 
+\end{center}
+
+
+
+
+
+\bigskip
+As well as deformation by compression or tension an object can deform when subjetc to a shear forces which causes a \emph{Shear stress}, $\tau$  and gives a resultant shear strain $\gamma$, where:
+
+\begin{equation}
+\tau = \frac{F_\parallel}{A}
+\end{equation} 
+\\
+and
+
+\begin{equation}
+\gamma = \frac{\Delta X}{L}
+\end{equation} 
+
+\bigskip
+
+
+\begin{center}
+	\begin{tikzpicture}
+	\draw [black!50, fill=black!30] (0,0) -- (4,0) -- (5,4) -- (1,4) -- (0,0);
+	\draw [black!50, fill=black!40] (4,0) -- (5,4) -- (6,5) -- (5,1) -- (4,0);
+	\draw [blue!50, pattern=north west lines, pattern color=blue!50] (1,4) -- (5,4) -- (6,5) -- (2,5) -- (1,4);
+	
+	\draw [<->, thick] (0,0) -- (0,4);
+	\draw [<->, thick] (0,4) -- (1,4);
+	
+	\draw [->, line width = 2, red] (5.5,4.5) -- (6.5,4.5);
+	
+	\node[right, red] at (6.5,4.5) {$F_\parallel$};
+	\node[left] at (0,2) {$L$};
+	\node[above] at (0.5,4) {$\Delta X$};
+	\node[right] at (3, 4.5) {$A$};
+	
+	\node[below] at (3,-1.0) {\textbf{\texttt{Shear Stress and Strain}}};
+	
+	\end{tikzpicture}
+\end{center}
+
+\bigskip
+
+This has an associated modulus, the \emph{ Shear modulus}, $G$, where:
+
+\begin{equation}
+G = \frac{shear \ stress}{shear \ strain} = \frac{\tau}{\gamma} =  \frac{F_\parallel}{A} \frac{L_0}{\Delta X}
+\end{equation}
+$$   $$
 
 
 \newpage
 
 
+\section{BEAMS Part 1: Shear Force and Bending Moment}
+
+\textbf{Structural Supports, Reactions and Free-Body Diagrams}
+\emph{Reaction forces} occur at supports or points of contact between bodies (Newton's 3rd law). The types of reaction that occur at a support depend on the type of support concerned. A support develops a reactive force on the supported member if the support prevents a translational movement of the beam (displacement), and it develops a reactive moment if it prevents rotation of the beam. Some common forms of supports and the reactions on free-body diagrams of the beams are shown below. A free-body diagram is used to show all external forces acting on a body, i.e. active and reactive forces, so that the body can be considered in isolation from its surroundings.
+
+\begin{center}
+	\begin{tikzpicture}
+	\draw [black!50, fill=black!20] (0,0) rectangle (3,0.5);
+	\draw [black] (2.5,0) -- (3,-1) -- (2,-1) -- (2.5,0);
+
+%	
+	\draw [thick] (6,0) -- (9,0);
+	\draw [->, thick] (8.5,-1) -- (8.5,0);
+%	
+%	\draw [->, line width = 2, red] (5.5,4.5) -- (6.5,4.5);
+%	
+	\node[above] at (2.5,0) {$A$};
+	\node[right] at (8.5,-1) {$F_y$};
+%	\node[above] at (0.5,4) {$\Delta X$};
+	\node[above] at (8.5, 0) {$A$};
+%	
+	\node[below] at (2.5,-1.5) {\textbf{\texttt{Knife Edge Support}}};
+	\node[below] at (7.5,-1.5) {\textbf{\texttt{Free Body Diagram}}};
+	\end{tikzpicture}
+\end{center}
+
+
+\begin{center}
+	\begin{tikzpicture}
+	\draw [line width=12, black!20] (0,0) -- (3,1);
+	\draw [black] (0,0) -- (0.5,-1) -- (-0.5,-1) -- (0,0);
+	\draw (0,0) circle (0.3);
+%	%	
+	\draw [thick] (6,0) -- (9,1);
+	\draw [->, thick] (6,0) -- (7.5,0);
+	\draw [->, thick] (6,-1.5) -- (6,0);
+%	%	
+%	%	\draw [->, line width = 2, red] (5.5,4.5) -- (6.5,4.5);
+%	%	
+	\node[right] at (6.0,-0.75) {$F_y$};
+	\node[right] at (7.5,0) {$F_x$};
+%	\node[above] at (0.5,4) {$\Delta X$};
+%	\node[above] at (8.5, 0) {$A$};
+	%	
+	\node[below] at (1.5,-1.5) {\textbf{\texttt{Pinned Support}}};
+	\node[below] at (7.5,-1.5) {\textbf{\texttt{Free Body Diagram}}};
+	\end{tikzpicture}
+\end{center}
+
+
+
+\begin{center}
+	\begin{tikzpicture}
+	\draw [line width=12, black!20] (0,0) -- (3,1);
+%	\draw [black] (0,0) -- (0.5,-1) -- (-0.5,-1) -- (0,0);
+	\draw (0,0) circle (0.3);
+	\draw (0,0) circle (0.5);
+	\draw [fill = green] (-1,-1) rectangle (2,-0.5);
+	%	%	
+	\draw [thick] (6,0) -- (9,1);
+%	\draw [->, thick] (6,0) -- (7.5,0);
+	\draw [->, thick] (6,-1.5) -- (6,0);
+	%	%	
+	%	%	\draw [->, line width = 2, red] (5.5,4.5) -- (6.5,4.5);
+	%	%	
+	\node[right] at (6.0,-0.75) {$F_y$};
+%	\node[right] at (7.5,0) {$F_x$};
+	%	\node[above] at (0.5,4) {$\Delta X$};
+	%	\node[above] at (8.5, 0) {$A$};
+	%	
+	\node[below] at (1.5,-1.5) {\textbf{\texttt{Roller Support}}};
+	\node[below] at (7.5,-1.5) {\textbf{\texttt{Free Body Diagram}}};
+	\end{tikzpicture}
+\end{center}
+
+
+\begin{center}
+	\begin{tikzpicture}
+
+	\draw [fill = blue] (0,-1) rectangle (0.5,1);
+	\draw [fill = black!30] (0.2,0) rectangle (3.2,0.5);
+	%	%	
+	\draw [thick] (6,0) -- (9,0);
+	\draw [->, very thick] (5,0) -- (6,0);
+	\draw [->, very thick] (6,-1.5) -- (6,0);
+	\draw [->, black, very thick] (4.5, -.5) arc [radius=1, start angle=215, end angle= 120];
+	%	%	
+	%	%	\draw [->, line width = 2, red] (5.5,4.5) -- (6.5,4.5);
+	%	%	
+	\node[right] at (6.0,-0.75) {$F_y$};
+	\node[above] at (5.5,0) {$F_x$};
+	\node[left] at (4.5,0.5) {$M_A$};
+	\node[left] at (0, 0) {$A$};
+	%	
+	\node[below] at (1.5,-1.5) {\textbf{\texttt{Fixed Support}}};
+	\node[below] at (7.5,-1.5) {\textbf{\texttt{Free Body Diagram}}};
+	\end{tikzpicture}
+\end{center}
+
+\bigskip
+
+\emph{Beams, Shear Forces and Bending Moments}
+A beam is a structure that is subjected to external forces inclined to its longitudinal axis. In most case, beams are horizontal and the loads they carry act vertically downwards, perpendicular to the longitudinal axis.
+In order to carry external forces, a beam has to be placed on supports which provide reactions to the external actions. The types of supports commonly used are:
+\begin{enumerate}
+	\item knife edges, rollers or pins (simply-supported beam)
+	\item built-in at one end (cantilever beam)
+	\item built-in at one end, simply-supported at the other (propped cantilever)
+	\item built-in at both ends (encastre beam)
+\end{enumerate}
+
+This course will focus on cases 1 and 2 only.	
+
+\bigskip
+
+\emph{Equilibrium of Beams}
+For a beam to be at rest (i.e. in equilibrium) when acted upon by external forces, the conditions of 2 dimensional equilibrium must be satisfied:
+\begin{enumerate}
+	\item the algebraic sum of all the forces acting on the beam (including reactions) is zero [in the horizontal (x) and vertical (y) directions)], i.e.
+	$$ \Sigma F_x =0 \ and \ \Sigma F_y = 0 $$
+	\item the algebraic sum of the moments of all the forces (including reactions) is zero about every point on the beam, i.e.
+	$$ \Sigma M = 0 $$
+\end{enumerate}
+
+	
+\emph{Types of Load}
+There are two main types of loading which act on beams: concentrated or point loads that are applied to the beam through a 'knife-edge' and are shown on diagrams by arrows; uniformly distributed loads (UDI.) are spread over the whole or part of a beam so that the load carried by a given portion is proportional to the length of that portion. The magnitude of a UDL is measured in N/m and is usually denoted by $\omega$ . The figure below shows examples of beams with point loads and UDLs.
+
+\begin{center}
+\begin{tikzpicture}
+\filldraw[fill=black] (0,0) rectangle (10,0.2);
+%supports
+\draw[->, very thick, black] (0,-1) -- (0,0);
+\draw[->, very thick, black] (10,-1) -- (10,0);
+%loads
+\draw[->, very thick, red] (1,1) -- (1,0.2);
+\draw[->, very thick, red] (5,1) -- (5,0.2);
+\draw[->, very thick, red] (8,1) -- (8,0.2);
+
+%labels
+\node [right] at (0,-1) {$R_A$};
+\node [right] at (10,-1) {$R_E$};
+\node [above, red] at (1,1) {$F_B$};
+\node [above, red] at (5,1) {$F_C$};
+\node [above, red] at (8,1) {$F_D$};
+
+\node[below] at (5,-1.5) {\textbf{\texttt{Reaction Supports and Point Loads}}};
+
+\end{tikzpicture}
+\end{center}
+
+
+\bigskip
+
+\begin{center}
+\begin{tikzpicture}
+\filldraw[fill=black] (0,0) rectangle (10,0.2);
+%supports
+\draw[->, very thick, black] (0,-1) -- (0,0);
+\draw[->, very thick, black] (10,-1) -- (10,0);
+%loads
+\draw[->, very thick, red] (1,1) -- (1,0.2);
+\draw[->, very thick, red] (1.25,1) -- (1.25,0.2);
+\draw[->, very thick, red] (1.5,1) -- (1.5,0.2);
+\draw[->, very thick, red] (1.75,1) -- (1.75,0.2);
+\draw[->, very thick, red] (2,1) -- (2,0.2);
+\draw[very thick, red] (1,1) -- (2,1);
+
+
+
+%labels
+\node [right] at (0,-1) {$R_A$};
+\node [right] at (10,-1) {$R_E$};
+\node [above, red] at (1.5,1) {$\omega$};
+%\node [above, red] at (5,1) {$F_C$};
+%\node [above, red] at (8,1) {$F_D$};
+
+\node[below] at (5,-1.5) {\textbf{\texttt{Reaction Supports and a UDL}}};
+
+\end{tikzpicture}
+\end{center}
+
+
+\bigskip
+
+\emph{Example of 2 Dimensional Equilibrium to Beams}
+Consider the beam shown below which shows a simply-supported beam with 4 external point loads acting upon it.
+
+\bigskip
+
+\begin{center}
+	\begin{tikzpicture}
+	\filldraw[fill=black] (0,0) rectangle (9,0.2);
+	%supports
+	\draw[->, very thick, black] (1,-1) -- (1,0);
+	\draw[->, very thick, black] (9,-1) -- (9,0);
+	%loads
+	\draw[->, very thick, red] (0,1) -- (0,0.2);
+	\draw[->, very thick, red] (5,1) -- (5,0.2);
+	\draw[->, very thick, red] (8,1) -- (8,0.2);
+	\draw[->, very thick, red] (3,1) -- (3,0.2);
+	
+	%labels
+	\node [right] at (0,-1) {$R_B$};
+	\node [right] at (9,-1) {$R_F$};
+	\node [above, red] at (0,1) {$5kN$};
+	\node [above, red] at (5,1) {$10kN$};
+	\node [above, red] at (8,1) {$15kN$};
+	\node [above, red] at (3,1) {$20kN$};
+	
+	\node[below] at (5,-1.5) {\textbf{\texttt{Reaction Supports and Point Loads}}};
+	
+	\end{tikzpicture}
+\end{center}
+
+\bigskip
+
+For equilibrium of forces, the sum of the four external vertical forces acting downwards must be equal to the sum of the two reaction forces acting vertically upwards, i.e.
+
+\begin{equation}
+\Sigma F_y = 0 = -5 + R_B -20 - 10 - 15 + R_F \ therefore \ R_B + R_F = 50kN
+\end{equation}
+
+
+\bigskip
+
+Hence, this equation contains two unknown reaction forces and cannot be solved at this stage.
+If the distances between all the points of force application were known, then the moment caused by each force could be calculated about any point on the beam and the sum of these moments must be zero. However, if a moment equation was derived about points A, C, D and E, then an equation with the two unknown reaction forces $R_B$ and $R_F$ would result. Hence a moment equation should be derived about either of the reaction points B and F.\\
+Consider the same beam with the distances between each of the points as shown on the grid spaced 1m apart.
+
+\begin{center}
+	\begin{tikzpicture}
+	
+	\draw[help lines] (0,-1) grid (9,1);
+	\filldraw[fill=black] (0,0) rectangle (9,0.2);
+	%supports
+	\draw[->, very thick, black] (1,-1) -- (1,0);
+	\draw[->, very thick, black] (9,-1) -- (9,0);
+	%loads
+	\draw[->, very thick, red] (0,1) -- (0,0.2);
+	\draw[->, very thick, red] (5,1) -- (5,0.2);
+	\draw[->, very thick, red] (8,1) -- (8,0.2);
+	\draw[->, very thick, red] (3,1) -- (3,0.2);
+	
+	%labels
+	\node [right] at (0,-1) {$R_B$};
+	\node [right] at (9,-1) {$R_F$};
+	\node [above, red] at (0,1) {$F_A = 5kN$};
+	\node [above, red] at (5,1) {$F_E = 10kN$};
+	\node [above, red] at (8,1) {$F_D = 15kN$};
+	\node [above, red] at (3,1) {$F_C = 20kN$};
+	
+	\node[below] at (4,-1.5) {\textbf{\texttt{Distances Between Reaction Supports and Point Loads}}};
+	
+	\end{tikzpicture}
+\end{center}
+
+\bigskip
+
+For equilibrium of moments, the sum of the moments caused by all forces must be equal to zero at any point along the beam. However, to have an equation containing just one unknown reaction force, moments are taken about B (noting that +M is clockwise and —M is anticlockwise), i.e.
+
+\begin{equation}
+\Sigma M_B = 0 -(5x1) + (20x2) + (10x4) + (15x7) - (8xR_F) = O, \implies	R_F = 22.5 kN
+\end{equation}
+
+Hence substitute $R_F = 22.5 kN$ in equation above gives: $RB + 22.5 = 50kN \implies	R_B = 27.5 kN$ \\
+
+Diagrams can now be drawn to show the variation of shear force and bending moment along the span of the beam to establish the location of maximum values.\\
+
+\emph{Shear Force and Bending Moment Diagrams}
+Shear force (SF) and bending moment (BM) diagrams can be drawn that shows their variation along the span so that maximum values and their location can be established. The diagrams are usually drawn below the free-body diagram representing the beam.\\
+Consider the figure below which shows the loaded beam and the calculated reactions at B and F. Lines are also drawn from each point on the beam to aid construction of the SF and M diagrams.
+
+
+\begin{center}
+	\begin{tikzpicture}
+	
+	\draw[help lines] (0,-18) grid (9,1);
+	\filldraw[fill=black] (0,0) rectangle (9,0.2);
+	%supports
+	\draw[->, very thick, black] (1,-1) -- (1,0);
+	\draw[->, very thick, black] (9,-1) -- (9,0);
+	%loads
+	\draw[->, very thick, red] (0,1) -- (0,0.2);
+	\draw[->, very thick, red] (5,1) -- (5,0.2);
+	\draw[->, very thick, red] (8,1) -- (8,0.2);
+	\draw[->, very thick, red] (3,1) -- (3,0.2);
+	
+	%labels
+	\node [right] at (0,-1) {$27.5kN$};
+	\node [right] at (9,-1) {$22.5kN$};
+	\node [above, red] at (0,1) {$5kN$};
+	\node [above, red] at (5,1) {$10kN$};
+	\node [above, red] at (8,1) {$15kN$};
+	\node [above, red] at (3,1) {$20kN$};
+	
+	\node[below] at (4,-1.5) {\textbf{\texttt{Reaction Supports and Point Loads}}};
+	
+	
+	\draw[very thick, blue] (0,-6) -- (9,-6);
+	
+	\draw[very thick, black] (0,-6) -- (0,-6.5);
+	\draw[very thick, black] (0,-6.5) -- (1,-6.5);
+	\draw[very thick, black] (1,-6.5) -- (0,-6.5);
+	\draw[very thick, black] (1,-6.5) -- (1,-4.25);
+	\draw[very thick, black] (1,-4.25) -- (3,-4.25);
+	\draw[very thick, black] (3,-4.25) -- (3,-5.75);
+	\draw[very thick, black] (3,-5.75) -- (5,-5.75);
+	\draw[very thick, black] (5,-5.75) -- (5,-6.75);
+	\draw[very thick, black] (5,-6.75) -- (8,-6.75);
+	\draw[very thick, black] (8,-6.75) -- (8,-8.25);
+	\draw[very thick, black] (8,-8.25) -- (9,-8.25);	
+	\draw[very thick, black] (9,-8.25) -- (9,-6);	
+	
+	%\draw[->, very thick, black] (9,-1) -- (9,0);
+	
+	
+	
+	\node [above left] at (0,-6) {$0kN$};
+	\node [left] at (0,-6.5) {$-5$};
+	\node [left] at (1,-4.25) {$22.5 (max)$};
+	\node [above left] at (5,-5.75) {$2.5$};	
+	\node [below left] at (5,-6.75) {$-7$};
+	\node [left] at (8,-8.25) {$-22.5$};	
+	
+	\node[below] at (4,-9.0) {\textbf{\texttt{Shear Force Diagram}}};
+	
+	\draw[very thick, blue] (0,-16) -- (9,-16);
+	
+	\draw[very thick, black] (0,-16) -- (1,-16.5);
+	\draw[very thick, black] (1,-16.5) -- (3,-12.5);
+	\draw[very thick, black] (3,-12.5) -- (5,-12);
+	\draw[very thick, black] (5,-12) -- (8,-14.5);
+	\draw[very thick, black] (8,-14.5) -- (9,-16);
+
+	\node [above left] at (0,-16) {$0kNm$};
+	\node [left] at (1,-16.5) {$-5$};
+	\node [left] at (3,-12.5) {$40$};
+	\node [above left] at (5,-12) {$45(max)$};	
+	\node [below left] at (8,-14.5) {$22.5$};
+	
+	\node[below] at (4,-17.0) {\textbf{\texttt{Bending Moment Diagram}}};
+	
+	\end{tikzpicture}
+\end{center}
+
+\bigskip
+
+
+The maximum shear force is 22.5 kN along portions BC and EF, and the maximum bending moment is 45 kNm acting at D.
+To calculate the bending moments, use can be made of the shear force diagram: area AB — moment at B; area AB+BC = moment at C; area AB+BC+CD = moment at D (maximum in this case); area AB+BC+CD+DE = moment at E; area AB+BC+CD+DE+EF = moment at F e 0 in this case).
+Alternatively, moment equations can be derived to calculate the magnitude of the bending moment at each point, i.e.\\
+$M_B = -(5x1) = -5 kNm$,\\
+$M_C =  40 kNm$,\\
+$M_D =  = 45 kNm$,\\
+$M_E =  = 22.5 kNm$,\\
+$M_F =  = O kNm$.\\
+These values are the same as those calculated using the areas in the shear force diagrams.
 
 
 
 
 
+
+
+\newpage
 
 
 Percentage Uncertainty 
@@ -1663,11 +2288,11 @@ $$ stress = (elastic modulus) \times strain $$
 
 
 Young's modulus
-$$  Y = \frac{tensile stress}{tensile strain} = \frac{F_\bot}{A} \frac{L_0}{\Delta L} $$
+$$  E = \frac{tensile stress}{tensile strain} = \frac{F_\bot}{A} \frac{L_0}{\Delta L} $$
 
 
 Shear modulus
-$$  Y = \frac{shear stress}{shear strain} = \frac{F_\parallel}{A} \frac{L_0}{\Delta x} $$
+$$  G = \frac{shear stress}{shear strain} = \frac{F_\parallel}{A} \frac{L_0}{\Delta x} $$
 
 
 

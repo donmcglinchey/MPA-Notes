@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.16)  6 APR 2020 17:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.16)  15 APR 2020 16:55
 entering extended mode
 **./MPABasicsPlusEquations.tex
 (MPABasicsPlusEquations.tex
@@ -407,6 +407,14 @@ File: pgflibraryarrows.meta.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 /tikz/libraries\tikzlibrarypositioning.code.tex"
 File: tikzlibrarypositioning.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
+("C:\Users\dmg2\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlayer
+/tikz/libraries\tikzlibrarypatterns.code.tex"
+File: tikzlibrarypatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\dmg2\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\pgf
+librarypatterns.code.tex"
+File: pgflibrarypatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))
 ("C:\Users\dmg2\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\verbatim.sty"
 Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks29
@@ -555,20 +563,20 @@ Package: translator 2019-05-31 v1.12a Easy translation of strings in LaTeX
 )) (MPABasicsPlusEquations.aux)
 \openout1 = `MPABasicsPlusEquations.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
  ABD: EveryShipout initializing macros
 ("C:\Users\dmg2\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-pd
 f.mkii"
@@ -601,104 +609,133 @@ File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 ) [1
 
 {C:/Users/dmg2/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 97--100
+Underfull \hbox (badness 10000) in paragraph at lines 98--101
 \OT1/cmr/m/n/12 num-ber.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--109
+Underfull \hbox (badness 10000) in paragraph at lines 105--110
 \OT1/cmr/m/n/12 scribe a vec-tor.
  []
 
 [3
 
 ] [4]
-Overfull \hbox (11.51816pt too wide) in paragraph at lines 260--261
+Overfull \hbox (11.51816pt too wide) in paragraph at lines 261--262
 [][] 
  []
 
 [5] [6] [7] [8]
-Overfull \hbox (2.98923pt too wide) in paragraph at lines 342--342
+Overfull \hbox (2.98923pt too wide) in paragraph at lines 343--343
 []\OT1/cmr/bx/n/17.28 MOTION IN TWO AND THREE DI-MEN-
  []
 
 [9] [10]
-Overfull \hbox (17.5502pt too wide) in paragraph at lines 446--448
+Overfull \hbox (17.5502pt too wide) in paragraph at lines 447--449
 []\OT1/cmtt/m/n/12 A body at rest remains at rest or, if in motion, remains in 
 motion
  []
 
 
-Overfull \hbox (23.7252pt too wide) in paragraph at lines 456--458
+Overfull \hbox (23.7252pt too wide) in paragraph at lines 457--459
 []\OT1/cmtt/m/n/12 The acceleration of a system is directly proportional to and
  in the
  []
 
 
-Overfull \hbox (11.3752pt too wide) in paragraph at lines 456--458
+Overfull \hbox (11.3752pt too wide) in paragraph at lines 457--459
 \OT1/cmtt/m/n/12 same direction as the net external force acting on the system 
 and
  []
 
 [11]
-Overfull \hbox (11.3752pt too wide) in paragraph at lines 524--526
+Overfull \hbox (11.3752pt too wide) in paragraph at lines 525--527
 []\OT1/cmtt/m/n/12 Whenever one body exerts a force on a second body, the first
  body
  []
 
 
-Overfull \hbox (54.60022pt too wide) in paragraph at lines 524--526
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 525--527
 \OT1/cmtt/m/n/12 experiences a force that is equal in magnitude and opposite in
  direction
  []
 
 [12] [13] [14] [15] [16] [17]
-Overfull \hbox (17.17355pt too wide) in paragraph at lines 815--815
+Overfull \hbox (17.17355pt too wide) in paragraph at lines 816--816
 []\OT1/cmr/bx/n/17.28 LINEAR MO-MEN-TUM AND COL-LI-SIONS 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 899--900
+Underfull \hbox (badness 10000) in paragraph at lines 900--901
 
  []
 
 [19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 1056--1057
+Underfull \hbox (badness 10000) in paragraph at lines 1057--1058
 
  []
 
-[21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35]
-[36] [37] (MPABasicsPlusEquations.aux) ) 
+[21] [22] [23] [24] [25]
+Underfull \hbox (badness 10000) in paragraph at lines 1279--1280
+
+ []
+
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1310.
+
+
+Underfull \vbox (badness 5862) has occurred while \output is active []
+
+ [26]
+[27] [28] [29] [30] [31] [32]
+Underfull \hbox (badness 10000) in paragraph at lines 1722--1723
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1724--1725
+
+ []
+
+[33]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34]
+Overfull \vbox (8.56783pt too high) has occurred while \output is active []
+
+
+[35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49]
+[50] (MPABasicsPlusEquations.aux) ) 
 Here is how much of TeX's memory you used:
- 15948 strings out of 481556
- 355692 string characters out of 2914337
- 548475 words of memory out of 3000000
- 30942 multiletter control sequences out of 15000+200000
+ 16109 strings out of 481556
+ 360332 string characters out of 2914337
+ 555982 words of memory out of 3000000
+ 31097 multiletter control sequences out of 15000+200000
  544542 words of font info for 69 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,14n,69p,625b,780s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\dmg2\AppData\Local\MiKTeX\2.
-9\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0700.pk> <C:\Users\dmg2\AppData\Local\
-MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/dmg2/AppDat
-a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users
-/dmg2/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10
-.pfb><C:/Users/dmg2/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmex10.pfb><C:/Users/dmg2/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmmi12.pfb><C:/Users/dmg2/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/dmg2/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/dmg2/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/dmg2/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Us
-ers/dmg2/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17
-.pfb><C:/Users/dmg2/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmr8.pfb><C:/Users/dmg2/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb><C:/Users/dmg2/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/dmg2/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/dmg2/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on MPABasicsPlusEquations.pdf (37 pages, 249007 bytes).
+ 60i,14n,69p,716b,780s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\dmg2\AppData\Local\MiKTeX\2.9\fon
+ts/pk/ljfour/jknappen/ec/dpi600\tcrm0700.pk> <C:\Users\dmg2\AppData\Local\MiKTe
+X\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/dmg2/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/dmg2
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb>
+<C:/Users/dmg2/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmex10.pfb><C:/Users/dmg2/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmmi12.pfb><C:/Users/dmg2/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/dmg2/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/dmg2/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/dmg2/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/d
+mg2/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+<C:/Users/dmg2/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr8.pfb><C:/Users/dmg2/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb><C:/Users/dmg2/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmsy8.pfb><C:/Users/dmg2/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/dmg2/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on MPABasicsPlusEquations.pdf (50 pages, 285023 bytes).
 PDF statistics:
- 202 PDF objects out of 1000 (max. 8388607)
+ 244 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 47 words of extra memory for PDF output out of 10000 (max. 10000000)
 
