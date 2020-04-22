@@ -1808,11 +1808,230 @@ To calculate the bending moments, use can be made of the shear force diagram: ar
 Alternatively, moment equations can be derived to calculate the magnitude of the bending moment at each point, i.e.\\
 $M_B = -(5x1) = -5 kNm$,\\
 $M_C =  40 kNm$,\\
-$M_D =  = 45 kNm$,\\
-$M_E =  = 22.5 kNm$,\\
-$M_F =  = O kNm$.\\
+$M_D =  45 kNm$,\\
+$M_E =  22.5 kNm$,\\
+$M_F =  O kNm$.\\
 These values are the same as those calculated using the areas in the shear force diagrams.
 
+
+\bigskip
+Consider now a beam which has both point loads and a uniform distributed load as shown below.
+ 
+\begin{center}
+	\begin{tikzpicture}
+	%\draw[help lines] (0,-18) grid (12,1);
+	
+	\filldraw[fill=black] (0,0) rectangle (12,0.2);
+	%supports
+	\draw[->, very thick, black] (0,-1) -- (0,0);
+	\draw[->, very thick, black] (12,-1) -- (12,0);
+	%loads
+	\draw[->, very thick, red] (3,1) -- (3,0.2);
+	\draw[->, very thick, red] (6,1) -- (6,0.2);
+
+	\draw[very thick, red] (6,0.5) -- (12,0.5);
+	\draw[->, very thick, red] (7,0.5) -- (7,0.2);
+	\draw[->, very thick, red] (8,0.5) -- (8,0.2);	
+	\draw[->, very thick, red] (9,0.5) -- (9,0.2);
+	\draw[->, very thick, red] (10,0.5) -- (10,0.2);
+	\draw[->, very thick, red] (11,0.5) -- (11,0.2);
+	\draw[->, very thick, red] (12,0.5) -- (12,0.2);
+	
+	
+	
+	
+	%labels
+	\node [right] at (0,-1) {$R_A$};
+	\node [right] at (12,-1) {$R_D$};
+	\node [above, red, thick] at (9,0.5) {$\omega = 10 kNm^{-1}$};
+	\node [above, red] at (3,1) {$F_B = 200 kN$};
+	\node [above, red] at (6,1) {$F_C = 50 kN$};
+	
+	\end{tikzpicture}
+\end{center}
+ 
+ 
+\bigskip
+ First calculate the Reactions at A and D using the grid spacing of 5m per unit:
+ 
+\begin{equation}
+\sum M_A = 200 \times 15 + 50 \times 30 + (10 \times 30) \times 45 + R_D \times 60 = 0 \to R_D = 300 kN 
+\end{equation}  
+ 
+\begin{equation}
+\sum F_y = R_A - 200 - 50 - (10 \times 30) + 300 = 0 \to R_A = 250 kN 
+\end{equation}  
+
+
+\begin{center}
+	\begin{tikzpicture}
+	\draw[help lines] (0,-18) grid (12,1);
+	
+	\filldraw[fill=black] (0,0) rectangle (12,0.2);
+	%supports
+	\draw[->, very thick, black] (0,-1) -- (0,0);
+	\draw[->, very thick, black] (12,-1) -- (12,0);
+	%loads
+	\draw[->, very thick, red] (3,1) -- (3,0.2);
+	\draw[->, very thick, red] (6,1) -- (6,0.2);
+	
+	\draw[very thick, red] (6,0.5) -- (12,0.5);
+	\draw[->, very thick, red] (7,0.5) -- (7,0.2);
+	\draw[->, very thick, red] (8,0.5) -- (8,0.2);	
+	\draw[->, very thick, red] (9,0.5) -- (9,0.2);
+	\draw[->, very thick, red] (10,0.5) -- (10,0.2);
+	\draw[->, very thick, red] (11,0.5) -- (11,0.2);
+	\draw[->, very thick, red] (12,0.5) -- (12,0.2);
+	
+	
+	
+	
+	%labels
+	\node [right] at (0,-1) {$R_A = 250 kN$};
+	\node [right] at (12,-1) {$R_D = 300 kN$};
+	\node [above, red, thick] at (9,0.5) {$\omega = 10 kNm^{-1}$};
+	\node [above, red] at (3,1) {$F_B = 200 kN$};
+	\node [above, red] at (6,1) {$F_C = 50 kN$};
+	
+	\node[below] at (6,-1.5) {\textbf{\texttt{Reaction Supports and Point Loads}}};
+	
+	
+	\draw[very thick, blue] (0,-6) -- (9,-6);
+	
+	\draw[very thick, black] (0,-6) -- (0,-3.5);
+	\draw[very thick, black] (0,-3.5) -- (3,-3.5);
+	\draw[very thick, black] (3,-5.5) -- (3,-3.5);
+	\draw[very thick, black] (3,-5.5) -- (6,-5.5);
+	\draw[very thick, black] (6,-5.5) -- (6,-6.0);
+	\draw[very thick, black] (6,-6.0) -- (12,-9.0);
+	\draw[very thick, black] (12,-9.0) -- (12,-6.0);
+	
+	%\draw[->, very thick, black] (9,-1) -- (9,0);
+	
+	
+	
+	\node [above left] at (0,-6) {$0kN$};
+	\node [left] at (0,-3.5) {$250$};
+	\node [above] at (6,-5.5) {$50$};
+	\node [right] at (12,-9.0) {$-300$};
+	\node [right] at (8,-7.0) {$-100$};
+	\node [right] at (10,-8.0) {$-200$};
+		
+
+	
+	\node[below] at (6,-9.0) {\textbf{\texttt{Shear Force Diagram}}};
+	
+	\draw[very thick, blue] (0,-16) -- (12,-16);
+	
+	\draw[very thick, black] (0,-16) -- (3,-12.0);
+	\draw[very thick, black] (3,-12) -- (6,-11.5);
+
+
+	\draw[very thick] (6,-11.5) to [out=00,in=115] (12,-16);
+	
+	\node [above left] at (0,-16) {$0kNm$};
+	\node [left] at (3,-12) {$3750$};
+	\node [above left] at (6,-11.5) {$4500$};
+	\node [above right] at (8,-12) {$4000$};	
+	\node [below right] at (10.2,-13) {$2500$};
+	
+	\node[below] at (6,-17.0) {\textbf{\texttt{Bending Moment Diagram}}};
+	
+	\end{tikzpicture}
+\end{center}
+
+\bigskip
+
+The maximum shear force is 300 kN acting at D, and the maximum bending moment is 4500 kNm acting at C.  The bending moments are calculated using the areas of the shear force diagrams or by moment calculation about each point along the beam.
+\bigskip
+
+\textbf{When drawing SF and BM diagrams, some general rules apply:}
+
+\begin{enumerate}
+	\item In the absence of distributed loads (UDLs), the SF diagram consists of horizontal steps and the BM diagram is a series of straight lines.
+	\item For a beam (or part of a beam) carrying a UDL only, the SF diagram is a sloping straight line and the BM diagram is a parbola.
+	\item At a point where the SF diagram passes through zero (i.e. where the SF changes sign), the BM diagram has a maximum or minimum value.
+	\item Over a part of the span for which SF is zero, the BM has constant value.
+	\item At a point where the BM diagram passes through zero, this is called a point of contraflexure (or inflexion).
+\end{enumerate}
+\bigskip
+
+\newpage
+\section{Beams Part 2: Bending Stresses}
+
+\subsection{Centroids and 2nd Moment of Area}
+
+
+In statics, the 'centre of gravity' is the point through which the resultant weight or gravity effect passes regardless of the orientation of the body. Similar to the centre of gravity, a centre of area exists for every geometrical shape which is called the \emph{centroid}. The position of the centroid of an area is usually defined by the coordinates $\bar{x}$ and $\bar{y}$  which are the distances from a reference set of axes.\\
+For the common cross-sections; circle, rectangle, right angled triangled, the neutral axes coordinates  $\bar{x}$ and $\bar{y}$ are found by inspection or from simple formulae. However, for more complex geometry the position of the centroid and hence the neutral axes is found by considering the \emph{1st moments of area}. We will illustrate by example using geometric deconstruction.  The centroid of a 2D figure $X$ can be computed by dividing it into a finite number of simpler figures $ X_{1},X_{2},\dots ,X_{n}$, computing the centroid $ C_{i}$ and area $A_{i}$ of each part, and then computing
+
+\begin{equation}
+\bar{x}={\frac {\sum C_{i_{x}}A_{i}}{\sum A_{i}}},\bar{y}={\frac {\sum C_{i_{y}}A_{i}}{\sum A_{i}}}
+\end{equation}
+
+\bigskip
+
+Consider the "L" section beam shown below left of web width 10mm and this broken down into two rectangles A and B shown below right.  Taking the bottom left corner as (0,0) then the vertical distance to the central axis of rectangle A is 5mm and to the central axis of rectangle B 30mm.
+
+
+\begin{center}
+	\begin{tikzpicture}
+	
+	\draw[gray, fill = gray] (0,0) rectangle (1,5);
+	\draw[gray, fill = gray] (0,0) rectangle (2,-1);
+	
+	\draw (-.2, -1) -- (-1.2, -1);
+	\draw (-.2, 5) -- (-1.2, 5);
+	\draw[<->] (-.7, -1) -- (-0.7, 5);
+	
+	\draw (0, -1.2) -- (0, -2.2);
+	\draw (2, -1.2) -- (2, -2.2);
+	\draw [<->] (0, -1.7) -- (2, -1.7);
+	
+	\node [left] at (-1, 2) {$60mm$};
+	\node [below] at (1, -2.2) {$20mm$};
+	
+	\node[below] at (1,-3) {\textbf{\texttt{"L" Cross-section}}};
+	
+	
+	\draw[blue, fill = blue!30] (8,0) rectangle (9,5);
+	\draw[green, fill = green!30] (8,0) rectangle (10,-1);
+	
+	\draw [dashed, very thick, red] (7.5, -0.5) -- (10.5, -0.5);
+	\draw [dashed, very thick, red] (7.5, 2.5) -- (10.5, 2.5);
+	\draw [ultra thick, red] (6.5, 2.25) -- (10.5, 2.25);
+	\draw (6.5, -1) -- (7.5, -1);
+	\draw [<->] (7, -1) -- (7, 2.25);
+	
+	
+	\node [above] at (8.5, 2.5) {$A$};
+	\node [above] at (9, -1) {$B$};
+	\node [left] at (7, 1) {$\bar{y}$};
+	
+	
+	\node[below] at (9,-3) {\textbf{\texttt{Two rectangles A and B}}};
+	
+	\end{tikzpicture}
+\end{center}
+
+
+\bigskip
+
+
+To calculate $\bar{y}$ we apply 
+
+\begin{equation}
+\bar{y}={\frac {\sum C_{i_{y}}A_{i}}{\sum A_{i}}}
+\end{equation}
+
+\begin{equation}
+\bar{y}=\frac {(5 \times (10 \times 20) + 30 \times (10 \times 50)) }{(10 \times 20) + (10 \times 50)} = 22.86mm
+\end{equation}
+
+
+\bigskip
+
+The value for $\bar{x}$ can be found in a similar way, $\bar{x}= 6.43mm$.
 
 
 
