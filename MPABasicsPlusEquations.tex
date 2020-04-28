@@ -7,6 +7,7 @@
 \usetikzlibrary{arrows, arrows.meta}
 \usetikzlibrary{positioning}
 \usetikzlibrary{patterns}
+\usetikzlibrary{decorations.pathmorphing,patterns}
 \usepackage{verbatim}
 \usepackage{amsmath}
 
@@ -20,7 +21,7 @@
 
 
  
-\title{MPA Notes and Equations}
+\title{MPA Summary Notes and Equations}
 \author{Prof Don McGlinchey \thanks{Module Leader Mechanical Principles A}}
 \date{October 2020}
 
@@ -1458,6 +1459,13 @@ $$   $$
 
 \textbf{Structural Supports, Reactions and Free-Body Diagrams}
 \emph{Reaction forces} occur at supports or points of contact between bodies (Newton's 3rd law). The types of reaction that occur at a support depend on the type of support concerned. A support develops a reactive force on the supported member if the support prevents a translational movement of the beam (displacement), and it develops a reactive moment if it prevents rotation of the beam. Some common forms of supports and the reactions on free-body diagrams of the beams are shown below. A free-body diagram is used to show all external forces acting on a body, i.e. active and reactive forces, so that the body can be considered in isolation from its surroundings.
+\linebreak
+\texttt{\textbf{NOTE:}}
+\linebreak
+\textbf{Shearing Forces} are unaligned forces pushing one part of a body in one specific direction, and another part of the body in the opposite direction.
+\linebreak
+A \textbf{Bending Moment} is the reaction induced in a structural element when an external force or moment is applied to the element causing the element to bend. The most common or simplest structural element subjected to bending moments is the beam.
+
 
 \begin{center}
 	\begin{tikzpicture}
@@ -2033,6 +2041,416 @@ To calculate $\bar{y}$ we apply
 
 The value for $\bar{x}$ can be found in a similar way, $\bar{x}= 6.43mm$.
 
+\subsubsection{2nd Moment of Area}
+
+The second moment of area ($I$), also known as area moment of inertia, is a geometrical property of an area which can quantify its first moment and position relative to some axis.  In some way it can be used a quantifier of how easily or difficult it is to 'bend' a beam of cross-section of that particular area.  The simplest case is if the axis coincides with the location of the centroid, for example, if the axis lies along the axis of symmetry of a rectangle as shown below. 
+
+\begin{center}
+	\begin{tikzpicture}
+	
+	\draw[blue, fill = gray!30] (0,0) rectangle (3,5);
+	%\draw[gray, fill = gray] (0,0) rectangle (2,-1);
+	
+	\draw (-.2, 0) -- (-1.2, 0);
+	\draw (-.2, 5) -- (-1.2, 5);
+	\draw[<->] (-.7, 0) -- (-0.7, 5);
+%	
+	\draw (0, -.2) -- (0, -1.2);
+	\draw (3, -.2) -- (3, -1.2);
+	\draw [<->] (0, -.7) -- (3, -.7);
+	
+	\draw (3.2, 0) -- (4.2, 0);
+	\draw (3.2, 2.5) -- (4.2, 2.5);
+	\draw[<->] (3.7, 0) -- (3.7, 2.5);	
+	
+	\draw [ultra thick, red] (-0.1, 2.5) -- (3.1, 2.5);
+	\draw [ultra thick, cyan] (1.5, -0.1) -- (1.5, 5.1);
+	
+	
+	\node [left] at (-1, 2.5) {$H$};
+	\node [below] at (1.5, -0.7) {$W$};
+	\node [right] at (3.7, 1.25) {$\frac{H}{2}$};
+	
+	\node[below] at (1,-1.5) {\textbf{\texttt{Rectangle Height $H$ and Width $W$}}};
+		
+	\end{tikzpicture}
+\end{center}
+
+The second moment of area of this rectangle about the axis shown at height $\frac{H}{2}$ would be:
+
+\begin{equation}
+I_x=\frac{WH^3}{12}
+\end{equation}
+
+And about the axis at $\frac{W}{2}$ would be:
+\begin{equation}
+I_y=\frac{HW^3}{12}
+\end{equation}
+
+The second moment of area of a circular cross-section with an axis though the centre of the circle radius $R$ would be:
+
+\begin{equation}
+I_x=\frac{\pi R^4}{4}
+\end{equation}
+
+If the cross-section is an annulus of inner radius $r_1$ and outer radius $r_2$, the second moment of area would be:
+
+\begin{equation}
+I_x=\frac{\pi (r_2^4 - r_1^4)}{4}
+\end{equation}
+
+
+\subsubsection{Parallel Axis Theorem}
+
+To determine the second moment of area of a rigid body about another axis we can use the parallel axis theorem.   We first calculate the area of the cross-section, $A$, the moment of inertia about a parallel axis through the object's centroid $I_{x'}$ and then use perpendicular distance, $d$, between the axes to calculate $I$. An example using a rectangle is shown below.
+
+\begin{center}
+	\begin{tikzpicture}
+	
+	\draw[blue, fill = gray!30] (0,2) rectangle (3,4);
+	%\draw[gray, fill = gray] (0,0) rectangle (2,-1);
+	
+	\draw (-.2, 2) -- (-1.2, 2);
+	\draw (-.2, 4) -- (-1.2, 4);
+	\draw[<->] (-.7, 2) -- (-0.7, 4);
+	%	
+	\draw (0, 4.1) -- (0, 5.1);
+	\draw (3, 4.1) -- (3, 5.1);
+	\draw [<->] (0, 4.7) -- (3, 4.7);
+	
+	\draw (3.2, 0) -- (4.2, 0);
+	\draw (3.2, 3) -- (4.2, 3);
+	\draw[<->] (3.7, 0) -- (3.7, 3);	
+	
+	\draw [ultra thick, red] (-1, 0) -- (3.1, 0);
+	\draw [ultra thick, dashed, cyan] (-0.1, 3) -- (3.1, 3);
+	
+	
+	\node [left] at (-1, 3) {$H$};
+	\node [above] at (1.5, 4.7) {$W$};
+	\node [right] at (3.7, 1.25) {$d$};
+	
+	\node[below] at (1,-1.5) {\textbf{\texttt{Rectangle Height $H$ and Width $W$}}};
+	
+	\end{tikzpicture}
+\end{center}
+
+The second moment of area about the axis a distance $d$ from the neutral axis of the rectangle is:
+
+\begin{equation}
+I_x= I_{x'} + Ad^2 = \frac{WH^3}{12} + HWd^2
+\end{equation}
+
+
+\subsection{Internal Stresses}
+
+When a bending moment is applied to a beam it will bend, and as shown below, the upper surface becomes extended and in tension and the lower surface becomes compressed and in compression. If the top surface is in tension which leads to a +ve tensile stress and the lower surface is in compression which leads to a -ve compressive stress, then there must be a point between the two surfaces where the stress is zero. If the stress is zero at this point then the strain will also be zero. Hence this point which remains unchanged in length during bending is called the \emph{neutral plane} and the line where the plane cuts the cross-section of the beam is called the \emph{neutral axis} (NA).
+
+
+\begin{center}
+	\begin{tikzpicture}
+
+
+\draw [line width = 0.2cm, cyan] (0,0.2) arc [radius=15.1, start angle=75, end angle= 105];
+
+\draw [line width = 0.2cm, blue] (0,-0.2) arc [radius=14.9, start angle=75, end angle= 105];
+
+
+\draw [ultra thick, dashed] (0,0) arc [radius=15, start angle=75, end angle= 105];	
+
+%	
+	\draw [ultra thick, red] (0, 0) -- (1, 0);
+	\draw [very thick, cyan] (0, .2) -- (1, 1);
+	\draw [very thick, blue] (0, -.2) -- (1, -1);	
+%	\draw [ultra thick, dashed, cyan] (-0.1, 3) -- (3.1, 3);
+%	
+%	
+	\node [right, red] at (1, 0) {$NA$};
+	\node [above] at (1.0, 1.1) {$Tension$};
+	\node [below] at (1, -1.1) {$Compression$};
+%	
+%	\node[below] at (1,-1.5) {\textbf{\texttt{Rectangle Height $H$ and Width $W$}}};
+	
+	\end{tikzpicture}
+\end{center}
+
+The formula for bending or normal stress on the beam is given by:
+
+
+\begin{equation}
+\sigma_{bend} = \frac{My}{I}
+\end{equation}
+
+
+where,
+\begin{itemize}
+	\item $M$ is the internal bending moment about the beams’s neutral axis
+	\item $y$ is the perpendicular distance from the neutral axis to a point on the beam
+	\item $I$ is the moment of inertia of the section area about the neutral axis
+\end{itemize}
+
+
+From the theory of bending equation, it can be seen that the magnitude of the bending stress $\sigma_{bend}$ for a particular cross-section subjected to a bending moment $M$ and with a 2nd moment of area $I$, varies through the cross-section and hence is dependent upon the value of $y$.
+
+
+\bigskip
+
+
+\textbf{Symmetrical Cross-section}
+
+
+\medskip
+
+\begin{center}
+	\begin{tikzpicture}
+	\draw[help lines] (-4,-2) grid (9,2);
+	\draw[blue, fill = gray!30] (1,-1.5) rectangle (3,1.5);
+	\draw[gray, fill = yellow] (-2.0,0) circle [radius = 1.5];
+	
+	
+	\draw [ultra thick, red, dashed] (-4, 0) -- (9, 0);
+	%\draw [ultra thick, dashed, cyan] (-0.1, 3) -- (3.1, 3);
+	\draw [ultra thick] (7, 1.5) -- (9, 1.5);
+	\draw [ultra thick] (5, -1.5) -- (7, -1.5);
+	\draw [ultra thick, dashed, cyan] (5, -1.5) -- (9, 1.5);
+	\draw [ultra thick, green] (7, -1.5) -- (7, 1.5);	
+	
+	\node [right] at (9, 0) {$NA$};
+	\node [right] at (9, 1.5) {$+ \sigma_{bend}$};
+	\node [below, left] at (5, -1.5) {$- \sigma_{bend}$};	
+
+	
+	%\node[below] at (1,-2) {\textbf{\texttt{Rectangle Height $H$ and Width $W$}}};
+	
+	\end{tikzpicture}
+\end{center}
+
+
+\bigskip
+
+
+\textbf{Non-Symmetrical Cross-section}
+
+
+\medskip
+
+\begin{center}
+	\begin{tikzpicture}
+	\draw[help lines] (-4,-2) grid (9,2);
+	\draw[gray, fill = gray] (0,-1) rectangle (3,-.5);
+	\draw[gray, fill = gray] (1.25, -.5) rectangle (1.75,1.5);	
+	
+	%\draw[gray, fill = yellow] (-2.0,0) circle [radius = 1.5];
+	
+	
+	\draw [ultra thick, red, dashed] (-4, -.10) -- (9, -.10);
+	%\draw [ultra thick, dashed, cyan] (-0.1, 3) -- (3.1, 3);
+	\draw [ultra thick] (7, 1.5) -- (9, 1.5);
+	\draw [ultra thick] (6, -1) -- (7, -1);
+	\draw [ultra thick, dashed, cyan] (6, -1) -- (9, 1.5);
+	\draw [ultra thick, green] (7, -1) -- (7, 1.5);	
+	
+	\node [right] at (9, 0) {$NA$};
+	\node [right] at (9, 1.5) {$+ \sigma_{bend}$};
+	\node [below, left] at (6, -1) {$- \sigma_{bend}$};	
+
+	
+	%\node[below] at (1,-2) {\textbf{\texttt{Rectangle Height $H$ and Width $W$}}};
+	
+	\end{tikzpicture}
+\end{center}
+
+
+
+
+\newpage
+
+
+\section{OSCILLATIONS and VIBRATIONS}
+
+
+Two general types of vibration – free and forced.
+\linebreak
+Free:		motion maintained by gravity or elastic restoring 					forces.\linebreak
+Forced:	motion caused by external force application.\linebreak
+
+Vibration, free or forced, can be undamped or damped where undamped means	vibration continues indefinitely, and is friction ignored (theoretical).  Whereas in damped cases, that is all real systems are damped, vibration reduced or controlled.
+\linebreak
+
+Vibration in one direction (eg. x-axis) is termed a one or a single degree-of-freedom vibrating system.
+\linebreak
+
+Newton’s first law implies that an object oscillating back and forth is being acted on by forces. [Without a net force, an object would move in a straight line at a constant speed]. Consider, for example, plucking a guitar string downwards. The deformation of the string creates a force in the opposite direction, known as a restoring force. Once released, the restoring force causes the string to move back toward its stable equilibrium position, where the net force on it is zero. However, by the time the string gets there, it has momentum and continues to move up, producing the opposite deformation. It is then forced down, back through equilibrium, and the process is repeated until dissipative forces dampen the motion. These forces remove mechanical energy from the system, gradually reducing the motion until the string comes to rest.\linebreak
+
+The simplest oscillations occur when the restoring force is directly proportional to displacement. When stress and strain were covered in Newton’s Third Law of Motion, the name was given to this relationship between force and displacement was \emph{Hooke’s law}:
+\linebreak
+
+\begin{equation}
+F=-kx
+\end{equation}
+
+
+where,  $F$  is the restoring force,  $x$  is the displacement from equilibrium or deformation, and  $k$  is a constant related to the difficulty in deforming the system. The minus sign indicates the restoring force is in the direction opposite to the displacement.
+
+\textbf{Energy in Hooke’s Law of Deformation}.
+
+
+In order to produce a deformation, work must be done. That is, a force must be exerted through a distance, whether you pluck a guitar string or compress a car spring. If the only result is deformation, and no work goes into thermal, sound, or kinetic energy, then all the work is initially stored in the deformed object as some form of potential energy. The potential energy stored in a spring is  $PE_{el}=\frac{1}{2}kx^2$ . Here, we generalize the idea to elastic potential energy for a deformation of any system that can be described by Hooke’s law. Hence,
+
+\begin{equation}
+PE_{el} = \frac{1}{2} k x^2
+\end{equation}
+
+
+See: https://openstax.org/books/college-physics/pages/16-1-hookes-law-stress-and-strain-revisited
+
+In an oscillating system the Relationship between frequency and period is given by
+
+\begin{equation}
+f = \frac{1}{T}
+\end{equation}
+\bigskip
+
+
+
+In a  system consisting of a weight attached to one end of a spring, as shown below, if the weight is displaced straight down and then released the resulting motion  is said to be simple harmonic motion [SHM].
+
+
+
+\bigskip
+\begin{center}
+\begin{tikzpicture}
+
+\draw[help lines] (-4,-2) grid (9,5);
+\node[circle,fill=blue,inner sep=2.5mm] (a) at (0,0) {};
+\node[circle,fill=blue,inner sep=2.5mm] (b) at (2,2) {};
+\node[circle,fill=blue,inner sep=2.5mm] (c) at (4,0) {};
+\node[circle,fill=blue,inner sep=2.5mm] (d) at (6,2) {};
+
+\draw[decoration={aspect=0.3, segment length=3mm, amplitude=3mm,coil},decorate] (0,5) -- (a); 
+\draw[decoration={aspect=0.3, segment length=1.5mm, amplitude=3mm,coil},decorate] (2,5) -- (b); 
+
+\draw[decoration={aspect=0.3, segment length=3mm, amplitude=3mm,coil},decorate] (4,5) -- (c); 
+\draw[decoration={aspect=0.3, segment length=1.5mm, amplitude=3mm,coil},decorate] (6,5) -- (d); 
+
+
+\fill [pattern = north east lines] (-1,5) rectangle (7,5.2);
+\draw[thick] (-1,5) -- (7,5);
+
+\draw [dashed, red, ultra thick] (-2, 1) -- (8, 1);
+
+\draw [->, blue, ultra thick] (0, -1) -- (6, -1);
+\draw [|->, thick] (7, 0) -- (7, 1);
+
+\node [above, red] at (-2, 1) {$Neutral Position$};
+\node [below, blue] at (6, -1) {$Time$};
+\node [below right] at (7, 1) {$x(t)$};
+
+\end{tikzpicture}
+\end{center}
+
+
+The Position of the object [point mass] in Simple Harmonic Motion with a phase angle $\phi$ = 0, is given by;
+
+\begin{equation}
+x(t) = A \cos (\omega t)
+\end{equation}
+
+
+\textbf{Summary of Equations of Motion for SHM}
+
+
+\medskip
+General Position in Simple Harmonic Motion
+
+\begin{equation}
+x(t) = A \cos (\omega t + \phi)
+\end{equation}
+
+
+
+
+The General Velocity of an object in Simple Harmonic Motion;
+
+\begin{equation}
+x(t)  = -A \omega \sin (\omega t + \phi)
+\end{equation}
+	
+
+
+
+General Acceleration in Simple Harmonic Motion;
+
+\begin{equation}
+x(t)  = -A \omega^2 \cos (\omega t + \phi)
+\end{equation}
+
+
+
+Maximum displacement (amplitude) of SHM;
+
+\begin{equation}
+x_{max} = A
+\end{equation}
+
+
+
+Maximum velocity of SHM;
+\begin{equation}
+|v_{max}| = A \omega
+\end{equation}
+
+
+
+Maximum acceleration of SHM;
+\begin{equation}
+|a_{max}| = A \omega^2 
+\end{equation}
+
+System Stiffness
+
+It is very common to find systems with more than one spring - these can be arranged in series or in parallel and hence an overall or total system stiffness $k_T$  has to be calculated.
+
+\textbf{Series Spring Connections:}
+
+\begin{equation}
+\frac{1}{k_T} = \frac{1}{k_1} + \frac{1}{k_2} + \frac{1}{k_3} + \cdots
+\end{equation}
+
+
+\textbf{Parallel Spring Connections:}
+
+\begin{equation}
+{k_T} = {k_1} + {k_2} + {k_3} + \cdots
+\end{equation}
+
+
+
+\bigskip
+
+When a pendulum is given a small displacement sideways from its equilibrium position, it is subject to a restoring force due to gravity that will accelerate it back toward the equilibrium position, the subsequent motion is simple harmonic and the Angular frequency of a simple pendulum;
+
+\begin{equation}
+\omega = \sqrt{\frac{g}{L}}
+\end{equation}
+
+
+Natural angular frequency of a simple pendulum;
+
+\begin{equation}
+\omega_0 = \sqrt{\frac{k}{m}}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2040,6 +2458,7 @@ The value for $\bar{x}$ can be found in a similar way, $\bar{x}= 6.43mm$.
 
 \newpage
 
+\section{EQUATIONS}
 
 Percentage Uncertainty 
 $$=\frac{\delta A}{A} \times 100\%$$
